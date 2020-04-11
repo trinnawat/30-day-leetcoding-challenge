@@ -7,25 +7,22 @@
 
 class Solution:
     def diameterOfBinaryTree(self, root: TreeNode) -> int:
-        if root is None:
-            return 0
-        
+        '''
+            num_e is number of edge
+            num_v is number of vertex
+        '''
         def dia(_root) -> int:
-            if not _root.left and not _root.right:
+            if root is None:
                 return 0, 0
-            dl = 0
-            dr = 0
-            hl = 0
-            hr = 0
-            link = 0
+            num_e_left = 0
+            num_e_right = 0
+            num_v_left = 0
+            num_v_right = 0
             if _root.left:
-                hl, dl = dia(_root.left)
-                link += 1
+                num_v_left, num_e_left = dia(_root.left)
             if _root.right:
-                hr, dr = dia(_root.right)
-                link += 1
-            hi = max(hl, hr) + 1
-            di = max(dl, dr, hl + hr + link)
-            return hi, di
-        
+                num_v_right, num_e_right = dia(_root.right)
+            num_v_curr = max(num_v_left, num_v_right) + 1
+            num_e_curr = max(num_e_left, num_e_right, num_v_left + num_v_right)
+            return num_v_curr, num_e_curr
         return dia(root)[1]
