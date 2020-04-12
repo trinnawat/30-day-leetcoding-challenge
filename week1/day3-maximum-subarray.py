@@ -1,6 +1,7 @@
 '''
-    https://leetcode.com/problems/maximum-subarray/
+    https://leetcode.com/problems/maximum-subarray
 '''
+
 
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
@@ -11,5 +12,5 @@ class Solution:
             if _sum > max_sum:
                 max_sum = _sum
             if _sum < 0:
-                _sum = 0   
+                _sum = 0
         return max_sum

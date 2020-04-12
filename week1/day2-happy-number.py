@@ -1,10 +1,12 @@
 '''
-    https://leetcode.com/problems/happy-number/
+    https://leetcode.com/problems/happy-number
 '''
+
 
 class Solution:
     def isHappy(self, n: int) -> bool:
         visited = set()
+
         def _is_happy(_n):
             visited.add(_n)
             str_n = str(_n)

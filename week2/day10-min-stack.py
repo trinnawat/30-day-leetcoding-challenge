@@ -1,6 +1,7 @@
 '''
-    https://leetcode.com/problems/min-stack/
+    https://leetcode.com/problems/min-stack
 '''
+
 
 class MinStack:
     def __init__(self):
@@ -17,7 +18,7 @@ class MinStack:
             if x < last_min:
                 last_min = x
             self.stack.append((x, last_min))
-  
+
     def pop(self) -> None:
         if len(self.stack) > 0:
             self.stack.pop()
@@ -26,7 +27,7 @@ class MinStack:
         if len(self.stack) > 0:
             return self.stack[-1][0]
         return None
-        
+
     def getMin(self) -> int:
         return self.stack[-1][1]
 
