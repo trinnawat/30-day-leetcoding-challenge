@@ -26,4 +26,3 @@ class Solution:
         else:
             total_shift = total_shift % len(s)
             return s[total_shift:] + s[:total_shift]
-        return shift_s
