@@ -16,17 +16,14 @@ class Solution:
                         left_idx = len(stack) - 1 - stack[::-1].index('(')
                         #print("left_idx: ", left_idx)
                     except:
-                        #print("Cannot find left ", stack)
                         pass
                     else:
                         stack.pop(left_idx)
                         continue
-
                     try:
                         star_idx = len(stack) - 1 - stack[::-1].index('*')
                         #print("star_idx: ", star_idx)
                     except:
-                        #print("Cannot find star ", stack)
                         pass
                     else:
                         stack.pop(star_idx)
