@@ -37,12 +37,10 @@ class Solution:
                 return -1
             if first_id > last_id:
                 return -1
-
             mid_id = first_id + int((last_id - first_id)/2)
             first = nums[first_id]
             last = nums[last_id]
             mid = nums[mid_id]
-
             if target == mid:
                 return mid_id
             if target == first:
@@ -54,6 +52,7 @@ class Solution:
             if mid < target < last:
                 return _search(nums, mid_id+1, last_id-1, target)
             return -1
+
         max_id = _search_max_idx(nums, 0, len(nums)-1)
         if max_id == len(nums)-1:
             _mid_id = len(nums)//2
