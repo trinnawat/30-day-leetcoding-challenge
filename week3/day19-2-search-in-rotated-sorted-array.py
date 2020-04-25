@@ -8,7 +8,7 @@ class Solution:
         left_id = 0
         right_id = len(nums) - 1
         while left_id <= right_id:
-            mid_id = (right_id+left_id)//2
+            mid_id = (right_id + left_id)//2
             if nums[mid_id] == target:
                 return mid_id
             if nums[left_id] <= nums[mid_id]:
